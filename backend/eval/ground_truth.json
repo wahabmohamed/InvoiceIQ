@@ -1,0 +1,41 @@
+{
+  "_comment": "Verite terrain. Ajouter ici de VRAIES factures (scans, photos, autres mises en page) pour une evaluation representative ; les 3 factures synthetiques ne mesurent que le cas facile.",
+  "invoices": [
+    {
+      "file": "facture_001_techsupply.pdf",
+      "invoice_number": "INV-2026-001",
+      "invoice_date": "2026-01-15",
+      "supplier_name": "TechSupply SARL",
+      "client_name": "Acme Corp",
+      "amount_ht": 2525.0,
+      "tva": 505.0,
+      "tva_rate": 20,
+      "amount_ttc": 3030.0,
+      "currency": "EUR"
+    },
+    {
+      "file": "facture_002_greenenergy.pdf",
+      "invoice_number": "F-2026-0456",
+      "invoice_date": "2026-02-03",
+      "supplier_name": "GreenEnergy Solutions",
+      "client_name": "Restaurant Le Gourmet",
+      "amount_ht": 8950.0,
+      "tva": 1790.0,
+      "tva_rate": 20,
+      "amount_ttc": 10740.0,
+      "currency": "EUR"
+    },
+    {
+      "file": "facture_003_office.pdf",
+      "invoice_number": "OFF-2026-789",
+      "invoice_date": "2026-03-10",
+      "supplier_name": "OfficePro Fournitures",
+      "client_name": "Cabinet Juridique Martin",
+      "amount_ht": 1005.0,
+      "tva": 201.0,
+      "tva_rate": 20,
+      "amount_ttc": 1206.0,
+      "currency": "EUR"
+    }
+  ]
+}

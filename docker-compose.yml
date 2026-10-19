@@ -1,0 +1,49 @@
+services:
+  chromadb:
+    image: chromadb/chroma:0.5.11
+    container_name: invoiceiq-chromadb
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+    container_name: invoiceiq-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GROQ_MODEL=${GROQ_MODEL:-openai/gpt-oss-20b}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-intfloat/multilingual-e5-small}
+      - CHROMA_COLLECTION=${CHROMA_COLLECTION:-invoices_e5_cosine}
+      - HF_HOME=/app/db_data/hf_cache
+      # Timeouts HuggingFace allonges (10 s par defaut : trop court sur connexion lente)
+      - HF_HUB_ETAG_TIMEOUT=60
+      - HF_HUB_DOWNLOAD_TIMEOUT=120
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+      - SQLITE_PATH=/app/db_data/invoiceiq.db
+      - UPLOAD_DIR=/app/data/uploads
+    volumes:
+      - ./data:/app/data
+      - backend_db:/app/db_data
+    depends_on:
+      - chromadb
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: invoiceiq-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  chroma_data:
+  backend_db:

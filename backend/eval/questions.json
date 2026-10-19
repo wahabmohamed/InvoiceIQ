@@ -1,0 +1,53 @@
+{
+  "_comment": "Questions de detail pour evaluer la recherche vectorielle (recall@k). 'expected' = fichier qui contient la reponse.",
+  "questions": [
+    {
+      "q": "Combien d'ordinateurs portables Dell ont ete factures ?",
+      "expected": "facture_001_techsupply.pdf"
+    },
+    {
+      "q": "Quel est le prix unitaire des souris sans fil ?",
+      "expected": "facture_001_techsupply.pdf"
+    },
+    {
+      "q": "Quelle est l'adresse de TechSupply ?",
+      "expected": "facture_001_techsupply.pdf"
+    },
+    {
+      "q": "Combien coute l'installation des panneaux solaires ?",
+      "expected": "facture_002_greenenergy.pdf"
+    },
+    {
+      "q": "Quel est le montant de la maintenance annuelle ?",
+      "expected": "facture_002_greenenergy.pdf"
+    },
+    {
+      "q": "Ou se trouve le restaurant Le Gourmet ?",
+      "expected": "facture_002_greenenergy.pdf"
+    },
+    {
+      "q": "Combien de chaises de bureau ont ete achetees ?",
+      "expected": "facture_003_office.pdf"
+    },
+    {
+      "q": "Quel est le prix des cartouches d'encre HP ?",
+      "expected": "facture_003_office.pdf"
+    },
+    {
+      "q": "Combien de ramettes de papier A4 ?",
+      "expected": "facture_003_office.pdf"
+    },
+    {
+      "q": "Qui est le client de la facture OFF-2026-789 ?",
+      "expected": "facture_003_office.pdf"
+    },
+    {
+      "q": "What is the total amount of the solar panel invoice?",
+      "expected": "facture_002_greenenergy.pdf"
+    },
+    {
+      "q": "Quel est le montant TTC de la facture INV-2026-001 ?",
+      "expected": "facture_001_techsupply.pdf"
+    }
+  ]
+}
